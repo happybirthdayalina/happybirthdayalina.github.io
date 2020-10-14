@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: #111111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .circle{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #ff2562;
+        pointer-events: none;
+        transition: 0.1s;
+        clip-path: circle(50px at var(--x) var(--y));
+    }
+    h2, h5{
+        position: relative;
+        font-size: 18vh;
+        color: #111111;
+        font-weight: 300;
+        cursor: default;
+        z-index: 1;
+    }
+    h5{
+        font-size: 4vh;
+    }
+    h2:hover ~ .circle,
+    h5:hover ~ .circle{
+        background-color: #64ff14;
+        clip-path: circle(100px at var(--x) var(--y));
+    }
+}
